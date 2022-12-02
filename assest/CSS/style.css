@@ -1,5 +1,360 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #00ABB3;
+    --secondary-color: #172738;
+    --tertiary-color: #00cfcc;
+    --quaternary: #EAEAEA;
+}
+
+@media (max-width: 700px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/*
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    background: url("../IMAGES/indexBG.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(60, 64, 72, 0.5);
+    background-blend-mode: darken;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.commonFrom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: auto;
+    background: rgba(17, 7, 7, 0.823);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+    padding: 20px 0px;
+}
+
+.student_login span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 22px;
+}
+
+.student_login span button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background: none;
+    font-size: 20px;
+    margin: 10px 20px;
+    color: var(--tertiary-color);
+}
+
+.student_login div{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.student_login div input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 10px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 2px solid var(--tertiary-color);
+    padding: 2px;
+    width: 80%;
+}
+
+.student_login div input::placeholder{
+    color: var(--tertiary-color);
+    font-size: 16px;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 20px;
+    padding: 6px 30px;
+    margin: 20px 10px;
+    border-radius: 4px;
+    background: var(--tertiary-color);
+    color: var(--secondary-color);
+}
+
+.btn:hover{
+    cursor: pointer;
+} */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    height: 100px;
+    width: 100vw;
+    margin: 0px;
+}
+
+header .logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    left: 20px;
+}
+
+header .logo img {
+    height: 100%;
+    width: 100%;
+}
+
+header .login_types {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+}
+
+header .login_types button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    margin: 0px 10px;
+    border: none;
+    outline: none;
+    background: none;
+    border: 2px solid var(--tertiary-color);
+    color: var(--tertiary-color);
+}
+
+header .login_types button:hover {
+    cursor: pointer;
+    border: 2px solid var(--quaternary);
+    color: var(--quaternary);
+}
+
+header .login_types button span {
+    margin-right: 5px;
+}
+
+@media (max-width: 700px) {
+    header {
+        position: relative;
+    }
+
+    header .logo {
+        display: none;
+    }
+
+    header .login_types {
+        position: relative;
+        right: 0px;
+    }
+}
+
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../IMAGES/indexBG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-color: #080710d5;
+    background-blend-mode: darken;
+}
+
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 700px) {
+    .container {
+        min-height: 470px;
+        height: auto;
+    }
+}
+
+
+.common {
+    padding-top: 36px !important;
+    height: auto;
+    width: 360px;
+    background-color: rgba(0, 207, 204, 0.06);
+    position: absolute;
+    backdrop-filter: blur(10px);
+    padding: 30px 35px;
+}
+
+.common * {
+    font-family: 'Poppins', sans-serif;
+    color: var(--tertiary-color);
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.common h3 {
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.common h3 span {
+    font-size: 50px;
+}
+
+label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input {
+    display: block;
+    height: 50px;
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.07);
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+::placeholder {
+    color: #e5e5e5;
+}
+
+.btn {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710 !important;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    .common{
+        width: 320px;
+    }
+}
+
+.social {
+    margin-top: 30px;
+    display: flex;
+}
+
+.social div {
+    width: 150px;
+    border-radius: 3px;
+    padding: 5px 10px 10px 5px;
+    background-color: rgba(255, 255, 255, 0.27);
+    color: #eaf0fb;
+    text-align: center;
+}
+
+.social div:hover {
+    background-color: rgba(255, 255, 255, 0.47);
+}
+
+.social .fb {
+    margin-left: 25px;
+}
+
+.social i {
+    margin-right: 4px;
+}
+
+.admin_login_form {
+    display: none;
+    transition: all 0.5s;
+    transform: rotateY(180deg);
+    z-index: 0;
+    min-height: 483px;
+}
+
+.student_login_form {
+    z-index: 0;
+}
+
+.student_signup_link{
+    width: auto;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.student_signup_link a{
+    color: #b2b2b2;
+    font-weight: bolder;
+    font-size: 14px;
+    text-decoration: underline;
+    padding-bottom: 2px;
+}
+
+.student_signup_link a:hover{
+    cursor: pointer;
 }

@@ -1,5 +1,5 @@
 
-# Castly:-
+# [https://github.com/pratiksingh27/Beta10_codehacx/blob/main/CASTLY.jpg] Castly:-
  **Castly** is a Hostel Managment System which helps the legal authorities
 to resolve the issues regarding hostels. It also helpful for the students , whenever they having 
 problems or any issue regrading mess or hostel facilities , he or she can easily raise their problems in forms of formal template

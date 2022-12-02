@@ -31,7 +31,7 @@ or else they can create their own .
 -  Forget about tedious paperwork and redundant data entry.
 
 
-![Logo](https://drive.google.com/file/d/1-NOxti9Sugm07Oyo9hzDRlrH2oD6HBAa/view?usp=sharing)
+![Logo](https://github.com/pratiksingh27/Beta10_codehacx/blob/main/CASTLY.png)
 
 
 

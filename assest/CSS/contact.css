@@ -1,0 +1,9 @@
+.section{
+    padding-top: 100px;
+}
+.nav{
+    display: block !important;
+}
+label{
+    color: #000000 !important;
+}

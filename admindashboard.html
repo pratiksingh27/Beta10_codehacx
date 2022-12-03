@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castly-Dashboard</title>
+    <!-- linking css -->
+    <link rel="stylesheet" href="assest/CSS/dashboard.css">
+    <link rel="stylesheet" href="assest/CSS/admin.css">
+    <!-- cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+
+<body>
+    <section class="dashboard-main">
+        <!-- Side menu start -->
+        <div class="aside">
+            <div class="logo">
+                <a href="#"><span>Dash</span>Board</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+            </div>
+            <ul class="nav">
+                <li><a href="#home"><i class="fa fa-house"></i> Home</a></li>
+                <li><a href="#about"><i class="fa fa-user"></i> About Us</a></li>
+                <li><a href="#services"><i class="fa fa-list"></i> Services</a></li>
+                <li><a href="dashboard.html" class="active"><i class="fa fa-briefcase"></i> Dashboard</a></li>
+                <li><a href="contact.html"><i class="fa fa-comments"></i> Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="section profile">
+                <div class="d-container">
+                    <div class="row profile-top">
+                        <div class="profile-img padd-15">
+                            <img src="assest/IMAGES/apple-touch-icon.png" alt="">
+                        </div>
+                        <div class="profile-info padd-15">
+                            <div>
+                                <h4>Name : <span>Pratik Singh</span></h4>
+                                <h4>Position : <span>Warden</span></h4>
+                                <h4>Hoatal : <span>10 D</span></h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <div class="row"> -->
+                        
+                    <!-- </div> -->
+                        
+                    
+                </div>
+            </div>
+            <section class="admin section" id="admin">
+                <div class="d-container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Admin Dashboard</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="admin-content padd-15">
+                            <div class="row profile-top admin-top" style="display: flex; justify-content:space-around; align-items: center;">
+                                <div class="admin-img padd-15">
+                                    <!-- <img src="assest/IMAGES/apple-touch-icon.png" alt=""> -->
+                                    <input type="image" src="assest/IMAGES/apple-touch-icon.png" alt="" style="display: block; border-radius: 50%;"><br>
+                                    <!-- <input type="file" name="profile_photo" id="" placeholder="Uplode Image"> -->
+                                    <form method="post">
+                                        <div class="uplode-input">
+                                            <input type="file" id="upload" hidden/>
+                                            <label class="label" for="upload">Choose file</label>
+                                        </div>
+                                        <div>
+                                          <button class="uplode-btn">Submit</button>
+                                        </div>
+                                      </form>
+                                </div>
+                                <div class="profile-info padd-15">
+                                    <div>
+                                        <h4>Name : <span>Pratik Singh</span></h4>
+                                        <h4>Position : <span>Warden</span></h4>
+                                        <h4>Hoatal : <span>10 D</span></h4>
+                                    </div>
+                                </div>
+        
+                            </div>
+                            <div class="row">
+                                <div class="student-info padd-15">
+                                    <div class="row">
+                                        <div class="info-item padd-15">
+                                            <p>Birthday : <span>27 march 2003</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Age : <span>19</span></p>
+                                        </div>
+                                        <!-- <div class="info-item">
+                                            <p>website : <span>19</span></p>
+                                        </div> -->
+                                        <div class="info-item padd-15">
+                                            <p>Email : <span>pratik14uit@gmail.com</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Degree : <span>IT</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Phone : <span>+91 7987612363</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>City : <span>Chhindwara</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p>Freelnace : <span>Available</span></p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row">
+                                        <div class="buttons padd-15">
+                                            <a href="/images/PRATIK's Resume.pdf" class="btn" download="">Download CV</a>
+                                            <a href="#contact" data-section-index="1" class="btn hire-me">Hire me</a>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="data padd-15">
+                                    <div class="row">
+                                        <div class="data-item padd-15">
+                                            <h5>JS</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width:76%"></div>
+                                                <div class="data-percent">76%</div>
+                                            </div>
+                                        </div>
+                                        <div class="data-item padd-15">
+                                            <h5>React.js</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width:66%"></div>
+                                                <div class="data-percent">66%</div>
+                                            </div>
+                                        </div>
+                                        <div class="data-item padd-15">
+                                            <h5>HTML</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width:96%"></div>
+                                                <div class="data-percent">96%</div>
+                                            </div>
+                                        </div>
+                                        <div class="data-item padd-15">
+                                            <h5>CSS</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width:86%"></div>
+                                                <div class="data-percent">86%</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="edit">
+                <i class="fa fa-edit"></i>
+            </div>
+        </div>
+        
+        <!-- Side menu end -->
+    </section>
+    <script>
+        (function (w, d) {
+            w.CollectId = "638a693c4640ebe0301db816";
+            var h = d.head || d.getElementsByTagName("head")[0];
+            var s = d.createElement("script");
+            s.setAttribute("type", "text/javascript");
+            s.async = true;
+            s.setAttribute("src", "https://collectcdn.com/launcher.js");
+            h.appendChild(s);
+        })(window, document);
+    </script>
+    <script src="javascipt/dashboard.js"></script>
+</body>
+
+</html>

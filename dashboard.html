@@ -27,22 +27,37 @@
                 <li><a href="#home"><i class="fa fa-house"></i> Home</a></li>
                 <li><a href="#about"><i class="fa fa-user"></i> About Us</a></li>
                 <li><a href="#services"><i class="fa fa-list"></i> Services</a></li>
-                <li><a href="#dashboard" class="active"><i class="fa fa-briefcase"></i> Dashboard</a></li>
-                <li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
+                <li><a href="dashboard.html" class="active"><i class="fa fa-briefcase"></i> Dashboard</a></li>
+                <li><a href="contact.html"><i class="fa fa-comments"></i> Contact</a></li>
+                <li> <a href=""><button>logout</button></a></li>
             </ul>
         </div>
 
         <div class="main-content">
             <div class="section profile">
-                <div class="container">
+                <div class="d-container">
                     <div class="row profile-top">
                         <div class="profile-img padd-15">
-                            <img src="assest/IMAGES/apple-touch-icon.png" alt="">
+                            <!-- <img src="assest/IMAGES/apple-touch-icon.png" alt=""> -->
+
+                            <input type="image" src="assest/IMAGES/apple-touch-icon.png" alt=""
+                                style="display: block; border-radius: 50%; ">
+                            <!-- <input type="file" name="profile_photo" id="" placeholder="Uplode Image"> -->
+                            <form method="post">
+                                <div class="uplode-input">
+                                    <input type="file" id="upload" hidden />
+                                    <label class="label" for="upload"><i class="fa-solid fa-camera"></i></label>
+                                </div>
+                                <!-- <div>
+                                    <button class="uplode-btn">Submit</button>
+                                </div> -->
+                            </form>
                         </div>
                         <div class="profile-info padd-15">
                             <div>
                                 <h4>Name : <span>Pratik Singh</span></h4>
                                 <h4>Branch : <span>Information Technology</span></h4>
+                                <h4>Year : <span>2nd</span></h4>
                                 <h4>Hoatal : <span>10 D</span></h4>
                             </div>
                         </div>
@@ -54,43 +69,67 @@
                         </div>
                     </div>
                     <!-- <div class="row"> -->
-                        <div class="contact-info">
-                            <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-phone"></i></div>
-                                <h4>Student No.</h4>
-                                <p>+91 XXXXX XXXXX</p>
-                            </div>
-                            <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
-                                <h4>Address</h4>
-                                <p>Bhopal</p>
-                            </div>
-                            <!-- contact info item end -->
-                            <!-- contact info item start -->
-                            <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-envelope"></i></div>
-                                <h4>Email</h4>
-                                <p>info@gmail.com</p>
-                            </div>
-                            <!-- contact info item end -->
-                            <!-- contact info item start -->
-                            <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-globe-europe"></i></div>
-                                <h4>Parent No.</h4>
-                                <p>91 XXXXX XXXXX</p>
-                            </div>
+                    <div class="contact-info">
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-phone"></i></div>
+                            <h4>Student No.</h4>
+                            <p>+91 XXXXX XXXXX</p>
                         </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+                            <h4>Address</h4>
+                            <p>Bhopal</p>
+                        </div>
+                        <!-- contact info item end -->
+                        <!-- contact info item start -->
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-envelope"></i></div>
+                            <h4>Email</h4>
+                            <p>info@gmail.com</p>
+                        </div>
+                        <!-- contact info item end -->
+                        <!-- contact info item start -->
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-globe-europe"></i></div>
+                            <h4>Parent No.</h4>
+                            <p>91 XXXXX XXXXX</p>
+                        </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-phone"></i></div>
+                            <h4>Student No.</h4>
+                            <p>+91 XXXXX XXXXX</p>
+                        </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+                            <h4>Address</h4>
+                            <p>Bhopal</p>
+                        </div>
+                        <!-- contact info item end -->
+                        <!-- contact info item start -->
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-envelope"></i></div>
+                            <h4>Email</h4>
+                            <p>info@gmail.com</p>
+                        </div>
+                        <!-- contact info item end -->
+                        <!-- contact info item start -->
+                        <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-globe-europe"></i></div>
+                            <h4>Parent No.</h4>
+                            <p>91 XXXXX XXXXX</p>
+                        </div>
+                    </div>
                     <!-- </div> -->
                     <div class="row"></div>
-                        
-                    
+
+
                 </div>
             </div>
             <div class="edit">
                 <i class="fa fa-edit"></i>
             </div>
         </div>
-        
+
         <!-- Side menu end -->
     </section>
     <script>

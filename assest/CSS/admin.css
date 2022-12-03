@@ -1,0 +1,146 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* admin css */
+.admin .admin-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+.admin .admin-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.admin .admin-content h3{
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+.admin .admin-content h3 span{
+    color: var(--skin-color);
+}
+.admin .admin-content p{
+    font-size: 16px;
+    line-height: 25px;
+    color: var(--text-black-700);
+}
+/* .admin .admin-content .admin-top .student-info{
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-top: 40px;
+    font-size: 20px;
+    color: var(--text-black-900);
+} */
+/* .admin .admin-content .admin-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+} */
+
+.padd-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.admin .admin-content .admin-top{
+    /* display: flex; */
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+.admin .admin-content .profile-top .profile-info {
+    font-size: 20px;
+    color: var(--text-black-900);
+    line-height: 30px;
+}
+/* student info css in admindashboard*/
+.admin .admin-content .student-info{
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+.admin .admin-content .student-info .info-item{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.admin .admin-content .student-info .info-item p{
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-black-900);
+    border-bottom:  1px solid var(--bg-black-500);
+}
+.admin .admin-content .student-info .info-item p span{
+    font-weight: 400;
+    color: var(--text-black-700);
+    margin-left: 4px;
+    display: inline-block;
+}
+.admin .admin-content .student-info .buttons{
+    margin-top: 30px;
+}
+.admin .admin-content .student-info .buttons .btn{
+    /* margin-right: 15px; */
+    margin-top: 10px;
+}
+.admin .admin-content .data{
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin-top: 40px;
+}
+.admin .admin-content .data .data-item{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.admin .admin-content .data .data-item h5{
+    line-height: 40px;
+    font-weight: 600;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+}
+.admin .admin-content .data .data-item .progress{
+    background-color: var(--bg-black-500);
+    height: 7px;
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+}
+.admin .admin-content .data .data-item{
+    margin-bottom: 25px;
+}
+.admin .admin-content .data .data-item .progress .progress-in{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 4px;
+    background-color: var(--skin-color);
+}
+.admin .admin-content .data .data-item .data-percent{
+    position: absolute;
+    right: 0;
+    color: var(--text-black-900);
+    top: -40px;
+    font-weight: 400;
+    line-height: 40px;
+}
+@media (max-width:770px){
+    .admin .admin-content .student-info{
+        flex: 0 0 100%;
+        max-width: 100%;
+        /* margin-top: 40px; */
+    }
+    .admin .admin-content .data{
+        flex: 0 0 100%;
+        max-width: 100%;
+        /* margin-top: 40px; */
+    }
+}

@@ -11,7 +11,7 @@
 body{
     line-height: 1.5;
     font-size: 16px;
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 *{
     margin: 0;
@@ -181,7 +181,8 @@ ul{
     text-align: center;
     transition: all 0.3s ease;
 }
-.service .service-item .service-item-inner .icon .fa{
+.service .service-item .service-item-inner .icon .fa,
+.service .service-item .service-item-inner .icon .fa-solid{
     font-size: 40px;
     line-height: 60px;
     color: var(--skin-color);
@@ -190,7 +191,8 @@ ul{
 .service .service-item .service-item-inner:hover .icon{
     background: var(--skin-color);
 }
-.service .service-item .service-item-inner:hover .icon .fa{
+.service .service-item .service-item-inner:hover .icon .fa,
+.service .service-item .service-item-inner:hover .icon .fa-solid{
     font-size: 25px;
     color: #ffffff;
 }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints/Report Panel</title>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assest/CSS/service.css">
+    <link rel="stylesheet" type="text/css" href="assest/CSS/complain.css">
+    <link rel="stylesheet" href="assest/CSS/dashboard.css">
+</head>
+<body>
+    <div class="aside">
+        <div class="logo">
+            <a href="#"><span>P</span>roblems</a>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+        </div>
+        <ul class="nav">
+            <li><a href="#"><i class="fa fa-user"></i> Mess</a></li>
+            <li><a href="#"><i class="fa fa-user"></i> Hostel Facilites</a></li>
+            <li><a href="#"><i class="fa fa-house"></i> Ragging</a></li>
+            <li><a href="#"><i class="fa fa-briefcase"></i> Other</a></li>
+            <li><a href="service.html"><i class="fa fa-comments"></i> Back</a></li>
+        </ul>
+    </div>
+    <div class="section container">
+        <div class="add-flashcard-con">
+          <button id="add-flashcard"> Report/Complaint</button>
+        </div>
+        <!-- Display Card of Complaints And description Here -->
+        <div id="card-con">
+          <div class="card-list-container"></div>
+        </div>
+      </div>
+      <!-- Input form for users to fill complaints and description -->
+      <div class="question-container hide" id="add-question-card">
+        <h2>Raise your Complaints</h2>
+        <div class="wrapper">
+          <!-- Error message -->
+          <div class="error-con">
+            <span class="hide" id="error">Input fields cannot be empty!</span>
+          </div>
+          <!-- Close Button -->
+          <i class="fa-solid fa-xmark" id="close-btn" style="display: grid;"></i>
+        </div>
+        <label for="question">Raise your Complaints</label>
+        <textarea
+          class="input"
+          id="question"
+          placeholder="Type the complaints here..."
+          rows="2"
+        ></textarea>
+        <label for="answer">Description:</label>
+        <textarea
+          class="input"
+          id="answer"
+          rows="4"
+          placeholder="Elaborate your issue here..."
+        ></textarea>
+  
+        <label for="answer" required>Complaint done by:</label>
+        <textarea
+          class="input"
+          id="answer"
+          rows="2"
+          placeholder="Drop your Name and enrollment no...."
+        ></textarea>
+        <button id="save-btn">Save</button>
+      </div>
+    <!-- Side menu end -->
+   
+    
+    <!-- Script -->
+    <script src="/javascipt/complain.js"></script>
+</body>
+</html>

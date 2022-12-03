@@ -7,3 +7,9 @@
 label{
     color: #000000 !important;
 }
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none !important;
+}

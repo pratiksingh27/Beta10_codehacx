@@ -132,6 +132,10 @@
     font-weight: 400;
     line-height: 40px;
 }
+.admin-img input{
+    height: 300px;
+    width: 300px;
+}
 @media (max-width:770px){
     .admin .admin-content .student-info{
         flex: 0 0 100%;
@@ -142,5 +146,26 @@
         flex: 0 0 100%;
         max-width: 100%;
         /* margin-top: 40px; */
+    }
+    .admin-img input{
+        margin-left: 20px;
+    }
+    .profile-info{
+        margin-left: 30px;
+    }
+}
+@media (max-width:640px){
+    .profile-top {
+        justify-content: center;
+    }
+    .edit{
+        left: 90%;
+    }
+}
+
+@media (max-width:400px){
+    .admin-img  input{
+        height: 250px;
+        width: 250px;
     }
 }

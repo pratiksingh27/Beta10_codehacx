@@ -552,6 +552,8 @@ function signUp(email, password, firstName, lastName, branch, University_College
                 complaint: "",
                 identity: "",
                 status: "",
+                responseMessage : "",
+                
             });
 
             preloader1.style.display = "none";

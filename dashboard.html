@@ -143,6 +143,20 @@
     .update:hover{
         cursor: pointer;
     }
+
+    @media (max-width: 780px) {
+        #fullName{
+            width: auto !important;
+        }
+
+        #branch{
+            width: auto !important;
+        }
+
+        .profile .profile-info{
+            max-width: 100%;
+        }
+    }
 </style>
 
 <body onload="preloader()">
@@ -189,13 +203,13 @@
                         <div class="profile-info padd-15">
                             <div>
                                 <h4>Name : <input id="fullName"
-                                        style="font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 25%;" />
+                                        style="font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 25%; background: none;" />
                                 </h4>
                                 <h4>Branch : <input id="branch"
-                                        style="font-weight:100; border: none; outline: none; color: #302e4d; font-size: 20px; width: 45%;" />
+                                        style="font-weight:100; border: none; outline: none; color: #302e4d; font-size: 20px; width: 45%; background: none;" />
                                 </h4>
                                 <h4>College : <input
-                                        style="font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 60%;"
+                                        style="font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 60%; background: none;"
                                         id="university" style="font-weight:100; width: 25%;" /></h4>
                                 <h4 style="display: none; font-size: 14px;">status : <input
                                         style="font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none;"
@@ -244,14 +258,14 @@
                             <div class="icon"><i class="fa fa-phone"></i></div>
                             <h4>Student No.</h4>
                             <input
-                                style="text-align: center; font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 50%;"
-                                id="contactNo" />
+                                style="text-align: center; font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 50%; background: none;"
+                                id="contactNo"  />
                         </div>
                         <div class="contact-info-item padd-15">
                             <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
                             <h4>Address</h4>
                             <input
-                                style="text-align: center; font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 50%;"
+                                style="text-align: center; font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 50%; background: none;"
                                 id="address" />
                         </div>
                         <!-- contact info item end -->
@@ -260,7 +274,7 @@
                             <div class="icon"><i class="fa fa-envelope"></i></div>
                             <h4>Email</h4>
                             <input
-                                style="text-align: center; font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 70%;"
+                                style="text-align: center; font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 70%; background: none;"
                                 id="emailId" />
                         </div>
                         <!-- contact info item end -->
@@ -269,7 +283,7 @@
                             <div class="icon"><i class="fa fa-globe-europe"></i></div>
                             <h4>Parent No.</h4>
                             <input
-                                style="text-align: center; font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 50%;"
+                                style="text-align: center; font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 50%; background: none;"
                                 id="parentsNo" />
                         </div>
                     </div>

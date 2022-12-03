@@ -200,7 +200,6 @@ upload.addEventListener("change", function (event) {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             console.log('Upload is ' + progress + '% done');
             if (progress == '100') {
-                alert("uploaded");
             }
         },
         (error) => {
@@ -235,8 +234,11 @@ upload.addEventListener("change", function (event) {
                 updates['/students/' + newPostKey + "/photoUrl"] = downloadURL;
                 // updates['/user-posts/' + uid + '/' + newPostKey] = postData;
 
-                let preloader2 = document.querySelector(".preloader2");
-                preloader2.style.display = "none";
+                swal("Good job!", "You photo is successfully uploaded!", "success")
+                    .then((value) => {
+                        let preloader2 = document.querySelector(".preloader2");
+                        preloader2.style.display = "none";
+                    });
 
                 return update(ref(db), updates);
             });
@@ -264,7 +266,6 @@ take_identity.addEventListener("change", function (e) {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             console.log('Upload is ' + progress + '% done');
             if (progress == '100') {
-                alert("identity uploaded");
             }
         },
         (error) => {
@@ -299,11 +300,17 @@ take_identity.addEventListener("change", function (e) {
                 preloader2.style.display = "none";
                 // updates['/user-posts/' + uid + '/' + newPostKey] = postData;
 
-                let check_verification = document.querySelector("#check_verification");
-                check_verification.style.display = "none";
+                swal("Your identity is uploaded for Verification!")
+                    .then((value) => {
+                        let take_identity = document.getElementById("take_identity");
+                        take_identity.style.display = "none";
 
-                let processing = document.querySelector("#processing");
-                processing.style.display = "flex";
+                        let check_verification = document.querySelector("#check_verification");
+                        check_verification.style.display = "none";
+
+                        let processing = document.querySelector("#processing");
+                        processing.style.display = "flex";
+                    });
 
                 return update(ref(db), updates);
             });

@@ -200,6 +200,12 @@ upload.addEventListener("change", function (event) {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             console.log('Upload is ' + progress + '% done');
             if (progress == '100') {
+                let preloader2 = document.querySelector(".preloader2");
+                        preloader2.style.display = "none";
+                swal("Good job!", "You photo is successfully uploaded!", "success")
+                    .then((value) => {
+                        
+                    });
             }
         },
         (error) => {
@@ -234,11 +240,7 @@ upload.addEventListener("change", function (event) {
                 updates['/students/' + newPostKey + "/photoUrl"] = downloadURL;
                 // updates['/user-posts/' + uid + '/' + newPostKey] = postData;
 
-                swal("Good job!", "You photo is successfully uploaded!", "success")
-                    .then((value) => {
-                        let preloader2 = document.querySelector(".preloader2");
-                        preloader2.style.display = "none";
-                    });
+                
 
                 return update(ref(db), updates);
             });

@@ -513,6 +513,9 @@ width:200px;
 }
 
 .card-header {
+	display: flex;
+    justify-content: space-between;
+    padding: 10px;
 	padding: 15px 30px;
 	border-bottom: 1px solid var(--second-bg-color);
 	position: relative;
@@ -707,4 +710,74 @@ outline:none;}
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+
+.allComplaints{
+	display: none;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	width: 100vw;
+	z-index: 26;
+	position: fixed;
+	top: 0px;
+	height: 100vh;
+	/* border: 2px solid black; */
+	/* max-width: 1000px; */
+	background: #f9f9f9;
+	padding: 20px;
+}
+
+.allComplaints h3{
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+.allComplaints div h4{
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.complaintsBody{
+	width: 100%;
+	height: auto;
+}
+
+.complaintsBody h4{
+	margin-bottom: 4px !important;
+}
+
+.complaintsBody h5{
+	font-size: 16px;
+}
+
+.complaintsBody div{
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	height: auto;
+	flex-direction: column;
+	margin-bottom: 20px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.749);
+	padding-bottom: 20px;
+}
+
+.allComplaints div span{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.query{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4px 7px;
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	color: white;
+	margin: 20px 10px;
 }

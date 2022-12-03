@@ -178,7 +178,7 @@
                     </span></h3>
                 <label for="username">Username</label>
                 <input type="text" id="admin_email" name="admin_email" placeholder="Email or Phone" id="username"
-                    autocomplete="off" />
+                    autocomplete="off" required/>
 
                 <!-- <label for="password">Password</label>
             <input type="password" id="admin_password" name="admin_password" placeholder="Password" id="password"
@@ -186,7 +186,7 @@
 
                 <label for="password">Identity Key</label>
                 <input type="password" id="Identity_Key" name="Identity_Key" placeholder="Identity Key" id="password"
-                    autocomplete="off" />
+                    autocomplete="off" required/>
 
                 <button class="admin_login_btn">Log In</button>
 
@@ -231,8 +231,6 @@
                                             <div class="col-md-6 mb-4 pb-2">
 
                                                 <div id="branch">
-                                                    <!-- <input type="text" id="form3Examplev2" class="form-control form-control-lg" /> -->
-                                                    <!-- <label class="form-label" for="form3Examplev2">Branch</label> -->
                                                     <select
                                                         class="form-select form-select-md form-control form-control-lg"
                                                         aria-label=".form-select-sm example"
@@ -330,11 +328,25 @@
                                         <div class="row">
                                             <div class="col-md-6 mb-4 pb-2">
 
-                                                <div id="hostelName" class="form-outline">
-                                                    <input type="text" id="form3Examplev2"
-                                                        class="form-control form-control-lg text-white" />
-                                                    <label class="form-label" for="form3Examplev2">Hostel Name
-                                                    </label>
+                                                <div id="hostelName">
+                                                    <select
+                                                        class="form-select form-select-md form-control form-control-lg"
+                                                        aria-label=".form-select-sm example"
+                                                        style="background-color: #0b141e00 !important; color: white !important;">
+
+                                                        <option style="background-color: #0b141e !important;" selected>
+                                                            Select Hostel</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Hostel1">Hostel1
+                                                            </option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Hostel2">
+                                                            Hostel2</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Hostel3">Hostel3</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Hostel4">Hostel4</option>
+                                                    </select>
                                                 </div>
 
                                             </div>

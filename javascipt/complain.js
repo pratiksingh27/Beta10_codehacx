@@ -1,3 +1,6 @@
+import { app } from './firebaseconfig.js';
+import { getDatabase, ref, child, push, update, get } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js"
+
 const container = document.querySelector(".container");
 const addQuestionCard = document.getElementById("add-question-card");
 const cardButton = document.getElementById("save-btn");
@@ -11,14 +14,14 @@ const addOtherComplain = document.getElementById("add-other-complain");
 const closeBtnMess = document.getElementById("close-btn-mess");
 const closeBtnRagging = document.getElementById("close-btn-ragging");
 const closeBtnHostel = document.getElementById("close-btn-hostel");
-const closeBtnOther= document.getElementById("close-btn-other");
+const closeBtnOther = document.getElementById("close-btn-other");
 
 let editBool = false;
 
 //Add question when user clicks 'Add Flashcard' button
 const mess = document.querySelector("#mess");
 
- mess.addEventListener("click", () => {
+mess.addEventListener("click", () => {
   container.classList.add("hide");
   question.value = "";
   answer.value = "";
@@ -31,7 +34,7 @@ const mess = document.querySelector("#mess");
 const ragging = document.querySelector("#ragging");
 let raggingForm = document.querySelector(".mess");
 
- ragging.addEventListener("click", () => {
+ragging.addEventListener("click", () => {
   container.classList.add("hide");
   question.value = "";
   answer.value = "";
@@ -43,7 +46,7 @@ let raggingForm = document.querySelector(".mess");
 
 const other = document.querySelector("#other");
 
- other.addEventListener("click", () => {
+other.addEventListener("click", () => {
   container.classList.add("hide");
   question.value = "";
   answer.value = "";
@@ -54,7 +57,7 @@ const other = document.querySelector("#other");
 });
 const hostel = document.querySelector("#hostel");
 
- hostel.addEventListener("click", () => {
+hostel.addEventListener("click", () => {
   container.classList.add("hide");
   question.value = "";
   answer.value = "";
@@ -67,7 +70,7 @@ const hostel = document.querySelector("#hostel");
 //Hide  flashcard Card
 closeBtnMess.addEventListener(
   "click",
-  (hideQuestion = () => {
+  (() => {
     // container.classList.remove("hide");
     addQuestionCard.classList.add("hide");
     if (editBool) {
@@ -78,60 +81,60 @@ closeBtnMess.addEventListener(
 );
 
 closeBtnRagging.addEventListener(
-    "click",
-    (hideQuestion = () => {
-      container.classList.remove("hide");
-      addRaggingComplain.classList.add("hide");
-      if (editBool) {
-        editBool = false;
-        submitQuestion();
-      }
-    })
-  );
-
-
-  closeBtnHostel.addEventListener(
-    "click",
-    (hideQuestion = () => {
-      container.classList.remove("hide");
-      addHostelComplain.classList.add("hide");
-      if (editBool) {
-        editBool = false;
-        submitQuestion();
-      }
-    })
-  );
-
-  closeBtnOther.addEventListener(
-    "click",
-    (hideQuestion = () => {
-      container.classList.remove("hide");
-      addOtherComplain.classList.add("hide");
-      if (editBool) {
-        editBool = false;
-        submitQuestion();
-      }
-    })
-  );
-
-//Submit Question
-cardButton.addEventListener(
   "click",
-  (submitQuestion = () => {
-    editBool = false;
-    tempQuestion = question.value.trim();
-    tempAnswer = answer.value.trim();
-    if (!tempQuestion || !tempAnswer) {
-      errorMessage.classList.remove("hide");
-    } else {
-      container.classList.remove("hide");
-      errorMessage.classList.add("hide");
-      viewlist();
-      question.value = "";
-      answer.value = "";
+  (() => {
+    container.classList.remove("hide");
+    addRaggingComplain.classList.add("hide");
+    if (editBool) {
+      editBool = false;
+      submitQuestion();
     }
   })
 );
+
+
+closeBtnHostel.addEventListener(
+  "click",
+  (() => {
+    container.classList.remove("hide");
+    addHostelComplain.classList.add("hide");
+    if (editBool) {
+      editBool = false;
+      submitQuestion();
+    }
+  })
+);
+
+closeBtnOther.addEventListener(
+  "click",
+  (() => {
+    container.classList.remove("hide");
+    addOtherComplain.classList.add("hide");
+    if (editBool) {
+      editBool = false;
+      submitQuestion();
+    }
+  })
+);
+
+//Submit Question
+// cardButton.addEventListener(
+//   "click",
+//   (() => {
+//     editBool = false;
+//     tempQuestion = question.value.trim();
+//     tempAnswer = answer.value.trim();
+//     if (!tempQuestion || !tempAnswer) {
+//       errorMessage.classList.remove("hide");
+//     } else {
+//       container.classList.remove("hide");
+//       errorMessage.classList.add("hide");
+//       viewlist();
+//       question.value = "";
+//       answer.value = "";
+//     }
+//   })
+// );
 
 //Card Generate
 function viewlist() {
@@ -209,16 +212,55 @@ const disableButtons = (value) => {
 };
 
 
- // animation of aside menu
+// animation of aside menu
 const navToggleBtn = document.querySelector(".nav-toggle"),
-    aside = document.querySelector(".aside");
+  aside = document.querySelector(".aside");
 navToggleBtn.addEventListener("click", () => {
-    asideSectionToggleBtn();
+  asideSectionToggleBtn();
 })
 function asideSectionToggleBtn() {
-    aside.classList.toggle("open");
-    navToggleBtn.classList.toggle("open");
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.toggle("open");
-    }
+  aside.classList.toggle("open");
+  navToggleBtn.classList.toggle("open");
+  for (let i = 0; i < totalSection; i++) {
+    allSection[i].classList.toggle("open");
+  }
 }
+
+let messComplainBtn = document.querySelector(".messComplainBtn");
+messComplainBtn.addEventListener("click", function () {
+  let messComplainRaise = document.querySelector(".messComplainRaise").value;
+  let messComplainDescription = document.querySelector(".messComplainDescription").value;
+  let messComplaintdoneBy = document.querySelector(".messComplaintdoneBy").value;
+
+  if (messComplainRaise != "" && messComplainDescription != "" && messComplaintdoneBy != "") {
+    const db = getDatabase();
+
+    const userUid = `${localStorage.getItem("logged_in_user")}`;
+
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `students/${localStorage.getItem("logged_in_user")}`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+
+        const oldComplain = snapshot.val().complaint;
+        const newComplain = `${oldComplain} <div class="complain_body">
+        <h4>${snapshot.val().firstName} ${snapshot.val().lastName}</h4>
+        <h5>${messComplainRaise}</h5>
+        <p>${messComplainDescription}</p>
+        <span><button class="query" style="background-color:blue;">solve</button><button class="query" style="background-color: red;">reject</button></span>
+        </div>`
+
+        const updates = {};
+        updates['/students/' + userUid + '/complaint/'] = newComplain;
+
+        return update(ref(db), updates);
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+
+  }
+
+})

@@ -516,14 +516,14 @@ register_btn.addEventListener("click", function () {
           `);
     })
 
-    if (check1 == true && check2 == true && check3 == true && check4 == true && check5 == true && check6 == true && check7 == true && check8 == true && check9 == true && check10 == true && check11 == true && check12 == true){
+    if (check1 == true && check2 == true && check3 == true && check4 == true && check5 == true && check6 == true && check7 == true && check8 == true && check9 == true && check10 == true && check11 == true && check12 == true) {
 
         preloader1.style.display = "flex";
         signUp(emailId, password, firstName, lastName, branch, University_College, contactNo, semester, graduationYear, roomNo, hostelName, address, parentsNo);
     }
 })
 
-function signUp(email, password, firstName, lastName, branch, University_College, contactNo, semester, graduationYear, roomNo, hostelName, address, parentsNo){
+function signUp(email, password, firstName, lastName, branch, University_College, contactNo, semester, graduationYear, roomNo, hostelName, address, parentsNo) {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -535,6 +535,7 @@ function signUp(email, password, firstName, lastName, branch, University_College
             const studentListsRef = ref(db, 'students');
             const newStudentListRef = push(studentListsRef);
             set(newStudentListRef, {
+                complaint: "",
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
@@ -549,11 +550,10 @@ function signUp(email, password, firstName, lastName, branch, University_College
                 photoUrl: "",
                 address: address,
                 parentsNo: parentsNo,
-                complaint: "",
                 identity: "",
                 status: "",
-                responseMessage : "",
-                
+                responseMessage: "",
+
             });
 
             preloader1.style.display = "none";
@@ -597,11 +597,22 @@ let preloader2 = document.querySelector(".preloader2");
 let student_login_btn = document.querySelector(".student_login_btn");
 student_login_btn.addEventListener("click", function (event) {
     event.preventDefault();
+    preloader2.style.display = "flex";
     let student_email = document.querySelector("#student_email").value;
     let student_password = document.querySelector("#student_password").value;
 
-    loginUp(student_email, student_password);
-    preloader2.style.display = "flex";
+    if (student_email == "admin1@gmail.com" || student_email == "admin2@gmail.com" || student_email == "admin3@gmail.com" || student_email == "admin4@gmail.com") {
+        swal("Retry!", "Your emailId or Password must be wrong!", "wrong")
+            .then((value) => {
+                preloader2.style.display = "none";
+                document.addEventListener("#admin_email").value = "";
+                document.addEventListener("#Identity_Key").value = "";
+            });
+
+    }
+    else {
+        loginUp(student_email, student_password);
+    }
 
 })
 
@@ -626,37 +637,138 @@ function loginUp(email, password) {
 }
 
 function getUid(emailId) {
-const dbRef = ref(getDatabase());
-get(child(dbRef, `students`)).then((snapshot) => {
-    if (snapshot.exists()) {
-        console.log(snapshot.val());
-        for (let i in snapshot.val()) {
-            console.log(i);
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `students`)).then((snapshot) => {
+        if (snapshot.exists()) {
+            console.log(snapshot.val());
+            for (let i in snapshot.val()) {
+                console.log(i);
 
-            const dbRef = ref(getDatabase());
-            get(child(dbRef, `students/${i}`)).then((snapshot) => {
-                if (snapshot.exists()) {
-                    console.log(snapshot.val().email);
-                    if(emailId == snapshot.val().email){
-                        console.log("hello");
-                        localStorage.setItem("logged_in_user", `${i}`);
-                        swal("Good job!", "You are successfully login!", "success")
-                        .then((value) => {
-                            preloader2.style.display = "none";
-                            document.location.href = "dashboard.html";
-                        });
+                const dbRef = ref(getDatabase());
+                get(child(dbRef, `students/${i}`)).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        console.log(snapshot.val().email);
+                        if (emailId == snapshot.val().email) {
+                            console.log("hello");
+                            localStorage.setItem("logged_in_user", `${i}`);
+                            swal("Good job!", "You are successfully login!", "success")
+                                .then((value) => {
+                                    preloader2.style.display = "none";
+                                    document.location.href = "dashboard.html";
+                                });
+                        }
+                    } else {
+                        console.log("No data available");
                     }
-                } else {
-                    console.log("No data available");
-                }
-            }).catch((error) => {
-                console.error(error);
-            });
+                }).catch((error) => {
+                    console.error(error);
+                });
+            }
+        } else {
+            console.log("No data available");
         }
-    } else {
-        console.log("No data available");
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+
+
+
+// For Admin Login
+let admin_login_btn = document.querySelector(".admin_login_btn");
+admin_login_btn.addEventListener("click", function (event) {
+    let admin_email = document.querySelector("#admin_email").value;
+    let adminKey = document.querySelector("#Identity_Key").value;
+    event.preventDefault();
+
+    preloader2.style.display = "flex";
+    if (admin_email == "admin1@gmail.com" || admin_email == "admin2@gmail.com" || admin_email == "admin3@gmail.com" || admin_email == "admin4@gmail.com") {
+        adminLogin(admin_email, adminKey);
     }
-}).catch((error) => {
-    console.error(error);
-});
+    else {
+        swal("Retry!", "Your emailId or Password must be wrong!", "wrong")
+            .then((value) => {
+                preloader2.style.display = "none";
+                document.addEventListener("#admin_email").value = "";
+                document.addEventListener("#Identity_Key").value = "";
+            });
+    }
+})
+
+function adminLogin(email, password) {
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            // let hostelName = "";
+            // if (email == "admin1@gmail.com") {
+            //     hostelName = "Hostel1";
+            // }
+            // else if (email == "admin2@gmail.com") {
+            //     hostelName = "Hostel2";
+            // }
+            // else if (email == "admin3@gmail.com") {
+            //     hostelName = "Hostel3"
+            // }
+            // else if (email == "admin4@gmail.com") {
+            //     hostelName = "Hostel4";
+            // }
+
+            // const user = userCredential.user;
+            // const db = getDatabase();
+            // const adminPsotsRef = ref(db, 'admins');
+            // const newadminPsotsRef = push(adminPsotsRef);
+            // set(newadminPsotsRef, {
+            //     name: "",
+            //     birthday: "",
+            //     degree: "",
+            //     age: "",
+            //     email: email,
+            //     password: password,
+            //     phoneNo: "",
+            //     address: "",
+            //     hostelNameWarden: hostelName,
+            // });
+
+            setTimeout(() => {
+
+
+                const dbRef = ref(getDatabase());
+                get(child(dbRef, `admins/`)).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        for (let i in snapshot.val()) {
+                            const dbRef = ref(getDatabase());
+                            get(child(dbRef, `admins/${i}`)).then((snapshot) => {
+                                if (snapshot.exists()) {
+                                    if (email == snapshot.val().email) {
+                                        localStorage.setItem("logged_in_admin", `${i}`);
+                                    }
+                                } else {
+                                    console.log("No data available");
+                                }
+                            }).catch((error) => {
+                                console.error(error);
+                            });
+                        }
+                    } else {
+                        console.log("No data available");
+                    }
+                }).catch((error) => {
+                    console.error(error);
+                });
+
+                swal("Great!", "Your are successfully login as a Admin!", "success")
+                    .then((value) => {
+                        preloader2.style.display = "none";
+                        document.location.href = "try.html"
+                    });
+            }, 2000);
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            preloader2.style.display = "none";
+            swal("Retry!", `${errorMessage}`, "error");
+        });
 }

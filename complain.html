@@ -33,7 +33,7 @@
     </div>
     <div class="section container">
         <div class="add-flashcard-con">
-            <button id="add-flashcard"> Report/Complaint</button>
+            <button id="add-flashcard" style="display: none;"> Report/Complaint</button>
         </div>
         <!-- Display Card of Complaints And description Here -->
         <div id="card-con">
@@ -41,7 +41,7 @@
         </div>
     </div>
     <!-- Input form for users to fill complaints and description -->
-    <div class="question-container hide" id="add-question-card">
+    <div class="question-container" id="add-question-card">
         <h2>Raise your Complaints</h2>
         <div class="wrapper">
             <!-- Error message -->
@@ -52,13 +52,13 @@
             <i class="fa-solid fa-xmark" id="close-btn-mess" style="display: grid;"></i>
         </div>
         <label for="question">Raise your Complaints</label>
-        <textarea class="input" id="question" placeholder="Type the complaints here..." rows="2"></textarea>
+        <textarea class="input messComplainRaise" id="question" placeholder="Type the complaints here..." rows="2"></textarea>
         <label for="answer">Description:</label>
-        <textarea class="input" id="answer" rows="4" placeholder="Elaborate your issue here..."></textarea>
+        <textarea class="input messComplainDescription" id="answer" rows="4" placeholder="Elaborate your issue here..."></textarea>
 
         <label for="answer" required>Complaint done by:</label>
-        <textarea class="input" id="answer" rows="2" placeholder="Drop your Name and enrollment no...."></textarea>
-        <button id="save-btn">Save</button>
+        <textarea class="input messComplaintdoneBy" id="answer" rows="2" placeholder="Drop your Name and enrollment no...."></textarea>
+        <button id="save-btn" class="messComplainBtn">Save</button>
     </div>
     <!-- Side menu end -->
 
@@ -125,7 +125,7 @@
     </div>
 
     <!-- Script -->
-    <script src="/javascipt/complain.js"></script>
+    <script src="/javascipt/complain.js" type="module"></script>
 </body>
 
 </html>

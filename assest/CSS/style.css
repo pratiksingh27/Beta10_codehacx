@@ -552,3 +552,13 @@ body {
     ::-webkit-inner-spin-button{
         display: none;
     }
+
+    .openClose{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        background-color: #4835d4;
+        color: white;
+    }

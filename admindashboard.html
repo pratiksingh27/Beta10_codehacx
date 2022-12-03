@@ -14,7 +14,111 @@
 
 </head>
 
-<body>
+<style>
+    .preloader {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        background: #0b141e;
+        z-index: 50;
+        display: flex;
+    }
+
+    .preloader2 .ring {
+        display: flex;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: 18px !important;
+    }
+
+    .ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        height: 150px;
+        background: transparent;
+        border: 3px solid #3c3c3c;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 150px;
+        font-family: sans-serif;
+        font-size: 12px;
+        color: #00cfcc;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px #00cfcc;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    }
+
+
+
+    .ring:before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        width: 100%;
+        height: 100%;
+        border: 3px solid transparent;
+        border-top: 3px solid #00cfcc;
+        border-right: 3px solid #00cfcc;
+        border-radius: 50%;
+        animation: animateC 2s linear infinite;
+    }
+
+    .ring span {
+        display: block;
+        position: absolute;
+        top: calc(50% - 2px);
+        left: 50%;
+        width: 50%;
+        height: 4px;
+        background: transparent;
+        transform-origin: left;
+        animation: animate 2s linear infinite;
+    }
+
+    .ring span:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #00cfcc;
+        top: -6px;
+        right: -8px;
+        box-shadow: 0 0 20px #00cfcc;
+    }
+
+    @keyframes animateC {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes animate {
+        0% {
+            transform: rotate(45deg);
+        }
+
+        100% {
+            transform: rotate(405deg);
+        }
+    }
+</style>
+
+<body onload="preloader()">
     <section class="dashboard-main">
         <!-- Side menu start -->
         <div class="aside">
@@ -50,10 +154,10 @@
 
                     </div>
                     <!-- <div class="row"> -->
-                        
+
                     <!-- </div> -->
-                        
-                    
+
+
                 </div>
             </div>
             <section class="admin section" id="admin">
@@ -64,59 +168,60 @@
                         </div>
                     </div>
                     <div class="row">
-                        
+
                         <div class="admin-content padd-15">
-                            <div class="row profile-top admin-top" style="display: flex;column-gap: 40px; align-items: center;">
+                            <div class="row profile-top admin-top"
+                                style="display: flex;column-gap: 40px; align-items: center;">
                                 <div class="admin-img padd-15">
                                     <!-- <img src="assest/IMAGES/apple-touch-icon.png" alt=""> -->
-                                    <input type="image" src="assest/IMAGES/apple-touch-icon.png" alt="" style="display: block; border-radius: 50%;"><br>
-                                    <!-- <input type="file" name="profile_photo" id="" placeholder="Uplode Image"> -->
-                                    <form method="post">
+                                    <input type="image" src="assest/IMAGES/apple-touch-icon.png" alt=""
+                                        style="display: block; border-radius: 50%;"><br>
+                                    <!-- <form method="post">
                                         <div class="uplode-input">
                                             <input type="file" id="upload" hidden/>
                                             <label class="label" for="upload">Choose file</label>
                                         </div>
-                                        <!-- <div>
-                                          <button class="uplode-btn">Submit</button>
-                                        </div> -->
-                                      </form>
+                                      </form> -->
                                 </div>
                                 <div class="profile-info padd-15">
                                     <div>
-                                        <h4>Name : <span>Pratik Singh</span></h4>
-                                        <h4>Position : <span>Warden</span></h4>
-                                        <h4>Hostal : <span>10 D</span></h4>
+                                        <h4>Name : <span id="name" style="font-size: 17px; font-weight:100;">Pratik
+                                                Singh</span></h4>
+                                        <h4>University : <span style="font-size: 17px; font-weight:100;">UIT RGPV
+                                                Bhopal</span></h4>
+                                        <h4>Position : <span id="hostelName"
+                                                style="font-size: 17px; font-weight:100;">warden of hostel1</span></h4>
                                     </div>
                                 </div>
-        
+
                             </div>
                             <div class="row">
                                 <div class="student-info padd-15">
                                     <div class="row">
                                         <div class="info-item padd-15">
-                                            <p>Birthday : <span>27 march 2003</span></p>
+                                            <p>Birthday : <span id="birthday">27 march 2003</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Age : <span>19</span></p>
+                                            <p>Age : <span id="age">19</span></p>
                                         </div>
                                         <!-- <div class="info-item">
                                             <p>website : <span>19</span></p>
                                         </div> -->
                                         <div class="info-item padd-15">
-                                            <p>Email : <span>pratik14uit@gmail.com</span></p>
+                                            <p>Email : <span id="emailId">pratik14uit@gmail.com</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Degree : <span>IT</span></p>
+                                            <p>Degree : <span id="degree">IT</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Phone : <span>+91 7987612363</span></p>
+                                            <p>Phone : <span id="phoneNo">+91 7987612363</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>City : <span>Chhindwara</span></p>
+                                            <p>City : <span id="address">Chhindwara</span></p>
                                         </div>
-                                        <div class="info-item padd-15">
+                                        <!-- <div class="info-item padd-15">
                                             <p>Freelnace : <span>Available</span></p>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <!-- <div class="row">
                                         <div class="buttons padd-15">
@@ -128,28 +233,28 @@
                                 <div class="data padd-15">
                                     <div class="row">
                                         <div class="data-item padd-15">
-                                            <h5>JS</h5>
+                                            <h5>Education</h5>
                                             <div class="progress">
                                                 <div class="progress-in" style="width:76%"></div>
                                                 <div class="data-percent">76%</div>
                                             </div>
                                         </div>
                                         <div class="data-item padd-15">
-                                            <h5>React.js</h5>
+                                            <h5>LeaderShip</h5>
                                             <div class="progress">
                                                 <div class="progress-in" style="width:66%"></div>
                                                 <div class="data-percent">66%</div>
                                             </div>
                                         </div>
                                         <div class="data-item padd-15">
-                                            <h5>HTML</h5>
+                                            <h5>Feedback</h5>
                                             <div class="progress">
-                                                <div class="progress-in" style="width:96%"></div>
-                                                <div class="data-percent">96%</div>
+                                                <div class="progress-in" style="width:76%"></div>
+                                                <div class="data-percent">76%</div>
                                             </div>
                                         </div>
                                         <div class="data-item padd-15">
-                                            <h5>CSS</h5>
+                                            <h5>Reviews</h5>
                                             <div class="progress">
                                                 <div class="progress-in" style="width:86%"></div>
                                                 <div class="data-percent">86%</div>
@@ -167,21 +272,24 @@
                 <i class="fa fa-edit"></i>
             </div>
         </div>
-        
+
         <!-- Side menu end -->
     </section>
+
+    <div class="preloader preloader2">
+        <div class="ring">please <br> wait..
+            <span></span>
+        </div>
+    </div>
+
+    <!-- <script src="javascipt/dashboard.js"></script> -->
+    <script src="./javascipt/try.js" type="module"></script>
     <script>
-        (function (w, d) {
-            w.CollectId = "638a693c4640ebe0301db816";
-            var h = d.head || d.getElementsByTagName("head")[0];
-            var s = d.createElement("script");
-            s.setAttribute("type", "text/javascript");
-            s.async = true;
-            s.setAttribute("src", "https://collectcdn.com/launcher.js");
-            h.appendChild(s);
-        })(window, document);
+        setTimeout(() => {
+            let preloader2 = document.querySelector(".preloader2");
+            preloader2.style.display = "none"
+        }, 3000);
     </script>
-    <script src="javascipt/dashboard.js"></script>
 </body>
 
 </html>

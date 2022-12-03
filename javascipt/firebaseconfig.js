@@ -1,4 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import { } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import { } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js"
+import { } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
+import {ref } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js"
 
 const firebaseConfig = {
     apiKey: "AIzaSyAmHc96ZEP5fc_SCj__qH8kJViQvhABBH8",
@@ -11,3 +15,4 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+export const storageRef = ref;

@@ -417,6 +417,7 @@ a{
 .profile-img input{
     height: 300px;
     width: 300px;
+    border: 2px solid black;
 }
 @media (max-width:400px){
     .profile-img input{

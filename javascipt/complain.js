@@ -5,22 +5,70 @@ const question = document.getElementById("question");
 const answer = document.getElementById("answer");
 const errorMessage = document.getElementById("error");
 const addQuestion = document.getElementById("add-flashcard");
-const closeBtn = document.getElementById("close-btn");
+const addRaggingComplain = document.getElementById("add-ragging-complain");
+const addHostelComplain = document.getElementById("add-hostel-complain");
+const addOtherComplain = document.getElementById("add-other-complain");
+const closeBtnMess = document.getElementById("close-btn-mess");
+const closeBtnRagging = document.getElementById("close-btn-ragging");
+const closeBtnHostel = document.getElementById("close-btn-hostel");
+const closeBtnOther= document.getElementById("close-btn-other");
+
 let editBool = false;
 
 //Add question when user clicks 'Add Flashcard' button
-addQuestion.addEventListener("click", () => {
+const mess = document.querySelector("#mess");
+
+ mess.addEventListener("click", () => {
   container.classList.add("hide");
   question.value = "";
   answer.value = "";
+  addHostelComplain.classList.add("hide");
+  addOtherComplain.classList.add("hide");
+  addRaggingComplain.classList.add("hide");
   addQuestionCard.classList.remove("hide");
 });
 
+const ragging = document.querySelector("#ragging");
+let raggingForm = document.querySelector(".mess");
+
+ ragging.addEventListener("click", () => {
+  container.classList.add("hide");
+  question.value = "";
+  answer.value = "";
+  addQuestionCard.classList.add("hide");
+  addHostelComplain.classList.add("hide");
+  addOtherComplain.classList.add("hide");
+  addRaggingComplain.classList.remove("hide");
+});
+
+const other = document.querySelector("#other");
+
+ other.addEventListener("click", () => {
+  container.classList.add("hide");
+  question.value = "";
+  answer.value = "";
+  addQuestionCard.classList.add("hide");
+  addHostelComplain.classList.add("hide");
+  addRaggingComplain.classList.add("hide");
+  addOtherComplain.classList.remove("hide");
+});
+const hostel = document.querySelector("#hostel");
+
+ hostel.addEventListener("click", () => {
+  container.classList.add("hide");
+  question.value = "";
+  answer.value = "";
+  addQuestionCard.classList.add("hide");
+  addRaggingComplain.classList.add("hide");
+  addOtherComplain.classList.add("hide");
+  addHostelComplain.classList.remove("hide");
+});
+
 //Hide  flashcard Card
-closeBtn.addEventListener(
+closeBtnMess.addEventListener(
   "click",
   (hideQuestion = () => {
-    container.classList.remove("hide");
+    // container.classList.remove("hide");
     addQuestionCard.classList.add("hide");
     if (editBool) {
       editBool = false;
@@ -28,6 +76,43 @@ closeBtn.addEventListener(
     }
   })
 );
+
+closeBtnRagging.addEventListener(
+    "click",
+    (hideQuestion = () => {
+      container.classList.remove("hide");
+      addRaggingComplain.classList.add("hide");
+      if (editBool) {
+        editBool = false;
+        submitQuestion();
+      }
+    })
+  );
+
+
+  closeBtnHostel.addEventListener(
+    "click",
+    (hideQuestion = () => {
+      container.classList.remove("hide");
+      addHostelComplain.classList.add("hide");
+      if (editBool) {
+        editBool = false;
+        submitQuestion();
+      }
+    })
+  );
+
+  closeBtnOther.addEventListener(
+    "click",
+    (hideQuestion = () => {
+      container.classList.remove("hide");
+      addOtherComplain.classList.add("hide");
+      if (editBool) {
+        editBool = false;
+        submitQuestion();
+      }
+    })
+  );
 
 //Submit Question
 cardButton.addEventListener(
@@ -122,3 +207,18 @@ const disableButtons = (value) => {
     element.disabled = value;
   });
 };
+
+
+ // animation of aside menu
+const navToggleBtn = document.querySelector(".nav-toggle"),
+    aside = document.querySelector(".aside");
+navToggleBtn.addEventListener("click", () => {
+    asideSectionToggleBtn();
+})
+function asideSectionToggleBtn() {
+    aside.classList.toggle("open");
+    navToggleBtn.classList.toggle("open");
+    for (let i = 0; i < totalSection; i++) {
+        allSection[i].classList.toggle("open");
+    }
+}

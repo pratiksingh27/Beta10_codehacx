@@ -13,3 +13,11 @@ ul{
 a{
     text-decoration: none !important;
 }
+#contactus{
+    background-image: url(/assest/IMAGES/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #000000;
+    background-blend-mode: darken;
+}

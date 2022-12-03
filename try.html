@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AUMS</title>
+
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/AT-pro-logo.png" />
+    <!-- Import lib -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- End import lib -->
+
+    <link rel="stylesheet" type="text/css" href="assest/CSS/try.css">
+    <link rel="stylesheet" type="text/css" href="assest/CSS/service.css">
+    <link rel="stylesheet" href="assest/CSS/dashboard.css">
+</head>
+
+<body class="overlay-scrollbar">
+    <!-- navbar -->
+    <!-- <div class="navbar"> -->
+
+    <!-- nav right -->
+    <!-- <ul class="navbar-nav nav-right">
+            <li class="nav-item mode">
+                <a class="nav-link" href="#" onclick="switchTheme()">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item avt-wrapper">
+                <div class="avt dropdown">
+                    <img src="https://randomuser.me/api/portraits/women/71.jpg" alt="User image" class="dropdown-toggle"
+                        data-toggle="user-menu">
+                </div>
+                </li>
+                </ul>
+    </div> -->
+    <!-- end navbar -->
+    <div class="aside">
+        <div class="logo">
+            <a href="#"><span>C</span>astly</a>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+        </div>
+        <ul class="nav">
+            <li><a href="#about"><i class="fa fa-user"></i> Home</a></li>
+            <li><a href="complain.html"><i class="fa fa-user"></i> Complaint</a></li>
+            <li><a href="service.html" class="active"><i class="fa fa-house"></i> Services</a></li>
+            <li><a href="dashboard.html"><i class="fa fa-briefcase"></i> Dashboard</a></li>
+            <li><a href="contact.html"><i class="fa fa-comments"></i> Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- main content -->
+    <div class="wrapper section" style="margin: 0; top: 145px;">
+        <div class="navbar section" style="display: flex; flex:0 0 100%; max-width:100%; padding-top: 75px;">
+            <!-- <div style="width: 30%;">
+                <input type="search" name="" id="" placeholder="Search" style="padding: 10px 20px; border-radius: 20px; width:100%; position: relative; top: 10px; outline:none; border:none;">
+            </div> -->
+            <div class="row">
+                <div class="section-title padd-15">
+                    <h2>Admin Panel</h2>
+                </div>
+            </div>
+            
+            <!-- nav right -->
+            <ul class="navbar-nav nav-right">
+                <!-- <input type="search" name="" id=""> -->
+                <li class="nav-item mode">
+                    <a class="nav-link" href="#" onclick="switchTheme()">
+                        <i class="fas fa-moon dark-icon"></i>
+                        <i class="fas fa-sun light-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="fa fa-bell" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item avt-wrapper">
+                    <div class="avt dropdown">
+                        <a href="admindashboard.html">
+                        <img src="https://randomuser.me/api/portraits/women/71.jpg" alt="User image"
+                            class="dropdown-toggle" data-toggle="user-menu"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+
+            <div class="col-12 col-m-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Complaints solved
+                        </h3>
+                        <i class="fa fa-ellipsis-h"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="progress-wrapper">
+                            <p>
+                                Total
+                                <span class="float-right">15</span>
+                            </p>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-wrapper">
+                            <p>
+                                Accepted
+                                <span class="float-right">5</span>
+                            </p>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-wrapper">
+                            <p>
+                                Pending
+                                <span class="float-right">10</span>
+                            </p>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-m-12 col-sm-12">
+                <div class="card ">
+                    <div class="card-header">
+                        <h3>
+                            GatePass System
+                        </h3>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <div class="card-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Date of departure</th>
+                                    <th>Daate of Arrival</th>
+                                    <th>Status</th>
+                                    <!-- <th>#</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Vishal</td>
+                                    <td>12/2/22</td>
+                                    <td>14/2/22</td>
+                                    <td>
+                                        <span class="dot">
+                                            <i class="bg-success"></i>
+                                            Accepted
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Pratik</td>
+                                    <td>1/1/22</td>
+                                    <td>2/2/22</td>
+                                    <!-- <td> </td> -->
+                                    <td>
+                                        <span class="dot">
+                                            <i class="bg-danger"></i>
+                                            Rejected
+                                        </span>
+                                    </td>
+                                    <!-- <td>17/07/2020</td> -->
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-12 col-m-12 col-sm-12">
+<button type="button" class="btn btn-primary btn-lg btn-block"></button> -->
+        </div>
+    </div>
+
+    <!-- end main content -->
+    <!-- import script -->
+    <script src="javascipt/try.js"></script>
+    <script type="module" src="javascipt/dashboard.js"></script>
+    <!-- end import script -->
+</body>
+
+</html>

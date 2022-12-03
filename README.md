@@ -10,10 +10,10 @@ or else they can create their own .
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Teal  | ![#00ABB3] #00ABB3 |
-| Black | ![#3C4048] #3C4048 |
-| Grey  | ![#B2B2B2] #B2B2B2 |
-| Space | ![#EAEAEA] #EAEAEA |
+| Teal  |  #00ABB3 |
+| Black |  #3C4048 |
+| Grey  |  #B2B2B2 |
+| Space |  #EAEAEA |
 
 
 ## Features

@@ -13,6 +13,14 @@
     <!-- google fonts -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- MDB -->
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
 </head>
 
 <style>
@@ -23,64 +31,468 @@
             'GRAD' 0,
             'opsz' 48
     }
+
+    .preloader{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        background: #0b141e;
+        z-index: 2;
+        display: none;
+    }
+
+    .preloader2 .ring{
+        display: flex;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: 18px !important;
+    }
+
+    .ring{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        height: 150px;
+        background: transparent;
+        border: 3px solid #3c3c3c;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 150px;
+        font-family: sans-serif;
+        font-size: 12px;
+        color: #00cfcc;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px #00cfcc;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    }
+
+    
+
+    .ring:before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        width: 100%;
+        height: 100%;
+        border: 3px solid transparent;
+        border-top: 3px solid #00cfcc;
+        border-right: 3px solid #00cfcc;
+        border-radius: 50%;
+        animation: animateC 2s linear infinite;
+    }
+
+    .ring span {
+        display: block;
+        position: absolute;
+        top: calc(50% - 2px);
+        left: 50%;
+        width: 50%;
+        height: 4px;
+        background: transparent;
+        transform-origin: left;
+        animation: animate 2s linear infinite;
+    }
+
+    .ring span:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #00cfcc;
+        top: -6px;
+        right: -8px;
+        box-shadow: 0 0 20px #00cfcc;
+    }
+
+    @keyframes animateC {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes animate {
+        0% {
+            transform: rotate(45deg);
+        }
+
+        100% {
+            transform: rotate(405deg);
+        }
+    }
+
+
 </style>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="./assest/IMAGES/logo.jpg" alt="logo">
-        </div>
-        <span class="login_types">
-            <button class="student_login_type"><span class="material-symbols-outlined">
-                    school
-                </span>student</button>
-            <button class="admin_login_type">
-                <span class="material-symbols-outlined">
-                    admin_panel_settings
-                </span>Admin
-            </button>
-        </span>
-    </header>
+    <section id="main_container">
+        <header>
+            <div class="logo">
+                <img src="./assest/IMAGES/logo.jpg" alt="logo">
+            </div>
+            <span class="login_types">
+                <button class="student_login_type"><span class="material-symbols-outlined">
+                        school
+                    </span>student</button>
+                <button class="admin_login_type">
+                    <span class="material-symbols-outlined">
+                        admin_panel_settings
+                    </span>Admin
+                </button>
+            </span>
+        </header>
 
-    <div class="container">
-        <form class="common student_login_form">
-            <h3><span class="material-symbols-outlined">
-                    school
-                </span></h3>
-            <label for="username">Username</label>
-            <input type="text" id="student_email" name="student_email" placeholder="Email or Phone" id="username"
-                autocomplete="off" />
+        <div class="login_container">
+            <form class="common student_login_form">
+                <h3><span class="material-symbols-outlined">
+                        school
+                    </span></h3>
+                <label for="username">Username</label>
+                <input type="text" id="student_email" name="student_email" placeholder="Email or Phone" id="username"
+                    autocomplete="off" />
 
-            <label for="password">Password</label>
-            <input type="password" id="student_password" name="student_password" placeholder="Password" id="password"
-                autocomplete="off" />
+                <label for="password">Password</label>
+                <input type="password" id="student_password" name="student_password" placeholder="Password"
+                    id="password" autocomplete="off" />
 
-            <button class="btn">Log In</button>
-            <span class="student_signup_link">Doesn't hava an account? create &nbsp; <a>one here</a></span>
-        </form>
+                <button class="student_login_btn">Log In</button>
+                <span class="student_signup_link">Doesn't hava an account? create &nbsp; <a>one here</a></span>
+            </form>
 
-        <form class="common admin_login_form">
-            <h3><span class="material-symbols-outlined">
-                    admin_panel_settings
-                </span></h3>
-            <label for="username">Username</label>
-            <input type="text" id="admin_email" name="admin_email" placeholder="Email or Phone" id="username"
-                autocomplete="off" />
+            <form class="common admin_login_form">
+                <h3><span class="material-symbols-outlined">
+                        admin_panel_settings
+                    </span></h3>
+                <label for="username">Username</label>
+                <input type="text" id="admin_email" name="admin_email" placeholder="Email or Phone" id="username"
+                    autocomplete="off" />
 
-            <!-- <label for="password">Password</label>
+                <!-- <label for="password">Password</label>
             <input type="password" id="admin_password" name="admin_password" placeholder="Password" id="password"
                 autocomplete="off" /> -->
 
-            <label for="password">Identity Key</label>
-            <input type="password" id="Identity_Key" name="Identity_Key" placeholder="Identity Key" id="password"
-                autocomplete="off" />
+                <label for="password">Identity Key</label>
+                <input type="password" id="Identity_Key" name="Identity_Key" placeholder="Identity Key" id="password"
+                    autocomplete="off" />
 
-            <button class="btn">Log In</button>
+                <button class="admin_login_btn">Log In</button>
 
-        </form>
+            </form>
+        </div>
+    </section>
+
+    <section id="student_register_form" class="h-100 h-custom gradient-custom-2 student_register_form">
+        <div class="container py-5 h-100" style="max-width: 1000px;">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12">
+                    <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                        <div class="card-body p-0">
+                            <div class="row g-0">
+                                <div class="col-lg-6 general_inforamtion general_information">
+                                    <div class="p-5">
+                                        <h3 class="fw-normal mb-5" style="color: #4f7cc5;">Register Yourself</h3>
+
+
+                                        <div class="row ">
+                                            <div class="col-md-6 mb-4 pb-2">
+
+                                                <div id="firstName" class="form-outline">
+                                                    <input type="text" id="form3Examplev2"
+                                                        class="form-control form-control-lg text-white" />
+                                                    <label class="form-label" for="form3Examplev2">First Name</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6 mb-4 pb-2">
+
+                                                <div id="lastName" class="form-outline">
+                                                    <input type="text" id="form3Examplev3"
+                                                        class="form-control form-control-lg text-white" />
+                                                    <label class="form-label" for="form3Examplev3">Last Name</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4 pb-2">
+
+                                                <div id="branch">
+                                                    <!-- <input type="text" id="form3Examplev2" class="form-control form-control-lg" /> -->
+                                                    <!-- <label class="form-label" for="form3Examplev2">Branch</label> -->
+                                                    <select
+                                                        class="form-select form-select-md form-control form-control-lg"
+                                                        aria-label=".form-select-sm example"
+                                                        style="background-color: #0b141e00 !important; color: white !important;">
+
+                                                        <option style="background-color: #0b141e !important;" selected>
+                                                            Select Branch</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Information Technology">Information
+                                                            Technology</option>
+                                                        <option style="background: #0b141e !important;"
+                                                            value="Computer Science">Computer Science
+                                                        </option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Electronics Communication">
+                                                            Electronics Communication</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Electrical Engineering">Electrical
+                                                            Engineering</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Mechanical Engineering">Mechanical
+                                                            Engineering</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Automobile">Automobile</option>
+
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Petrochemical">Petrochemical</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Civil">Civil</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="CSBS">CSBS</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="AI-ML">AI-ML</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Data Science">Data Science</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="Others">Others</option>
+                                                    </select>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="col-md-6 mb-4 pb-2">
+
+                                                <div id="year_of_graduation">
+                                                    <!-- <input type="text" id="form3Examplev3" class="form-control form-control-lg" />
+                              <label class="form-label" for="form3Examplev3">Year of admiision</label> -->
+
+                                                    <select
+                                                        class="form-select form-select-md form-control form-control-lg"
+                                                        aria-label=".form-select-sm example"
+                                                        style="background-color: #0b141e00 !important; color: white !important;">
+
+                                                        <option style="background-color: #0b141e !important;" selected>
+                                                            Select Graduation Year</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="2022">2022</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="2023">2023</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="2024">2024</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="2025">2025</option>
+                                                        <option style="background-color: #0b141e !important;"
+                                                            value="2026">2026</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4 pb-2">
+
+                                                <div id="enrollmentNo" class="form-outline">
+                                                    <input type="text" id="form3Examplev2"
+                                                        class="form-control form-control-lg text-white" />
+                                                    <label class="form-label" for="form3Examplev2">Enrollment
+                                                        No.</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6 mb-4 pb-2">
+
+                                                <div id="semester" class="form-outline">
+                                                    <input type="number" min="1" max="8" id="form3Examplev3"
+                                                        class="form-control form-control-lg text-white appearance-none" />
+                                                    <label class="form-label" for="form3Examplev3">Semester</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4 pb-2">
+
+                                                <div id="hostelName" class="form-outline">
+                                                    <input type="text" id="form3Examplev2"
+                                                        class="form-control form-control-lg text-white" />
+                                                    <label class="form-label" for="form3Examplev2">Hostel Name
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6 mb-4 pb-2">
+
+                                                <div id="roomNo" class="form-outline">
+                                                    <input type="text" min="1" max="8" id="form3Examplev3"
+                                                        class="form-control form-control-lg text-white appearance-none" />
+                                                    <label class="form-label" for="form3Examplev3">Room No.</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 pb-2">
+                                            <div id="University_College" class="form-outline form-white">
+                                                <input type="text" id="form3Examplea2"
+                                                    class="form-control form-control-lg" />
+                                                <label class="form-label" for="form3Examplea2">University /
+                                                    College</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="mb-4 pb-2">
+                                            <div id="identity" class="form-outline form-white">
+                                                <input type="file" id="form3Examplea6" 
+                                                    class="form-control form-control-lg" 
+                                                    style="background: none !important;"/>
+                                                <label class="form-label" for="form3Examplea6">identity proof</label>
+                                            </div>
+                                        </div> -->
+
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6 text-white contact_details">
+                                    <div class="p-5">
+                                        <h3 class="fw-normal mb-5">&nbsp;</h3>
+
+                                        <div class="mb-4 pb-2">
+                                            <div id="emailId" class="form-outline form-white">
+                                                <input type="text" id="form3Examplea2"
+                                                    class="form-control form-control-lg" />
+                                                <label class="form-label" for="form3Examplea2">Your Email</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 pb-2">
+                                            <div id="password" class="form-outline form-white">
+                                                <input type="text" id="form3Examplea2"
+                                                    class="form-control form-control-lg" />
+                                                <label class="form-label" for="form3Examplea2">create password
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="mb-4 pb-2">
+                                            <div class="form-outline form-white">
+                                                <input type="text" id="form3Examplea6"
+                                                    class="form-control form-control-lg" value="India" readonly
+                                                    style="background: none !important;" />
+                                                <label class="form-label" for="form3Examplea6">Country</label>
+                                            </div>
+                                        </div> -->
+
+                                        <div class="row">
+                                            <div class="col-md-5 mb-4 pb-2">
+
+                                                <div class="form-outline form-white">
+                                                    <input type="text" id="form3Examplea7"
+                                                        class="form-control form-control-lg" value="+91" readonly
+                                                        style="background: none !important;" />
+                                                    <label class="form-label" for="form3Examplea7">Code +</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-7 mb-4 pb-2">
+
+                                                <div id="contactNo" class="form-outline form-white">
+                                                    <input type="number" id="form3Examplea8"
+                                                        class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Examplea8">Phone Number</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-5 mb-4 pb-2">
+
+                                                <div class="form-outline form-white">
+                                                    <input type="text" id="form3Examplea7"
+                                                        class="form-control form-control-lg" value="+91" readonly
+                                                        style="background: none !important;" />
+                                                    <label class="form-label" for="form3Examplea7">Code +</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-7 mb-4 pb-2">
+
+                                                <div id="parentsNo" class="form-outline form-white">
+                                                    <input type="number" id="form3Examplea8"
+                                                        class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Examplea8">Parent's Number</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <div id="address" class="form-outline form-white">
+                                                <input type="text" id="form3Examplea9"
+                                                    class="form-control form-control-lg" />
+                                                <label class="form-label" for="form3Examplea9">Address</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="form-check d-flex justify-content-start mb-4 pb-3">
+                          <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
+                          <label class="form-check-label text-white" for="form2Example3">
+                            I do accept the <a href="#!" class="text-white"><u>Terms and Conditions</u></a> of your
+                            site.
+                          </label>
+                        </div> -->
+
+                                        <button id="register_btn" type="button"
+                                            class="btn btn-light btn-lg register_btn" data-mdb-ripple-color="dark"
+                                            data-mdb-target="#exampleModal2">Register</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="preloader preloader1">
+        <div class="ring">processing
+            <span></span>
+        </div>
+    </div>
+
+    <div class="preloader preloader2">
+        <div class="ring">please <br> wait..
+            <span></span>
+        </div>
     </div>
 </body>
 
-<script src="./javascipt/index.js"></script>
+<script src="./javascipt/index.js" type="module"></script>
+
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+
+<!-- sweet alert.js -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </html>

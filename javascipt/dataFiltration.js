@@ -29,6 +29,10 @@ get(child(dbRef, `students/`)).then((snapshot) => {
           if(snapshot.val().hostelName == hostel){
             console.log("yes")
 
+            let complaintsBodyContent = document.querySelector(".complaintsBodyContent");
+            complaintsBodyContent.innerHTML = `${snapshot.val().complaint}`;
+            console.log(complaintsBodyContent);
+
             let studentsData = document.getElementById("studentsData");
             
             studentsData.innerHTML = studentsData.innerHTML +  `<td id="fullname">${snapshot.val().firstName + " " + snapshot.val().lastName}</td>
@@ -39,8 +43,8 @@ get(child(dbRef, `students/`)).then((snapshot) => {
             <td id="status">${snapshot.val().status}</td>`
           }
 
-          let complaintsBody = document.querySelector(".complaintsBody");
-          complaintsBody.innerHTML = `${snapshot.val().complaint}`
+         
+
         } else {
           console.log("No data available");
         }
@@ -56,7 +60,7 @@ get(child(dbRef, `students/`)).then((snapshot) => {
   console.error(error);
 });
 
-}, 5000);
+}, 7000);
 
 let viewall = document.querySelector(".viewall");
 let allComplaints = document.querySelector(".allComplaints");

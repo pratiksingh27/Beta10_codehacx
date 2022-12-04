@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="assest/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="assest/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assest/favicon//android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assest/favicon//favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assest/favicon//favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assest/favicon//favicon-16x16.png">
@@ -308,10 +308,14 @@
     <!-- <script src="javascipt/dashboard.js"></script> -->
     <script src="./javascipt/try.js" type="module"></script>
     <script>
-        setTimeout(() => {
-            let preloader2 = document.querySelector(".preloader2");
-            preloader2.style.display = "none"
-        }, 3000);
+        function preloader() {
+            setTimeout(() => {
+
+                let preloader2 = document.querySelector(".preloader2");
+                preloader2.style.display = "none"
+            }, 3000);
+        }
+
     </script>
 
     <script src="sweetalert2.all.min.js"></script>

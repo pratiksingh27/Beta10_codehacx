@@ -767,7 +767,7 @@ outline:none;}
 .allComplaints div span{
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: start;
 }
 
 .query{

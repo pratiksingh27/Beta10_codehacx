@@ -1,7 +1,7 @@
 import { app } from './firebaseconfig.js';
 import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js"
 
-const hostelName = "";
+// const hostelName = "";
 
 const dbRef = ref(getDatabase());
 get(child(dbRef, `admins/${localStorage.getItem("logged_in_admin")}`)).then((snapshot) => {
@@ -22,7 +22,7 @@ get(child(dbRef, `admins/${localStorage.getItem("logged_in_admin")}`)).then((sna
     let name = document.getElementById("name");
     name.innerHTML = current_user.name;
 
-    hostelName = document.getElementById("hostelName");
+    const hostelName = document.getElementById("hostelName");
     hostelName.innerHTML = `Warden of ${current_user.hostelNameWarden}`;
 
     let birthday = document.getElementById("birthday");

@@ -418,6 +418,7 @@ a{
     height: 300px;
     width: 300px;
     border: 2px solid black;
+    object-fit: cover;
 }
 @media (max-width:400px){
     .profile-img input{

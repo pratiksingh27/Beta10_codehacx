@@ -253,6 +253,13 @@ messComplainBtn.addEventListener("click", function () {
         const updates = {};
         updates['/students/' + userUid + '/complaint/'] = newComplain;
 
+        swal("Forwaeded!", "Your complaint is forwarded!")
+        .then((value) => {
+          document.querySelector(".messComplainRaise").value = "";
+          document.querySelector(".messComplainDescription").value = "";
+          document.querySelector(".messComplaintdoneBy").value = "";
+        });
+
         return update(ref(db), updates);
       } else {
         console.log("No data available");
@@ -260,7 +267,144 @@ messComplainBtn.addEventListener("click", function () {
     }).catch((error) => {
       console.error(error);
     });
-
   }
+})
 
+
+// 
+let raggingSubmitBtn = document.querySelector(".raggingSubmitBtn");
+raggingSubmitBtn.addEventListener("click", function () {
+  let raggingComplaintRaise = document.querySelector(".raggingComplaintRaise").value;
+  let raggingComplaintDescription = document.querySelector(".raggingComplaintDescription").value;
+  let raggingComplainDoneBy = document.querySelector(".raggingComplainDoneBy").value;
+
+  if (raggingComplaintRaise != "" && raggingComplaintDescription != "" && raggingComplainDoneBy != "") {
+    const db = getDatabase();
+
+    const userUid = `${localStorage.getItem("logged_in_user")}`;
+
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `students/${localStorage.getItem("logged_in_user")}`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+
+        const oldComplain = snapshot.val().complaint;
+        const newComplain = `${oldComplain} <div class="complain_body">
+        <h4>${snapshot.val().firstName} ${snapshot.val().lastName}</h4>
+        <h5>${raggingComplaintRaise}</h5>
+        <p>${raggingComplaintDescription}</p>
+        <span><button class="query" style="background-color:blue;">solve</button><button class="query" style="background-color: red;">reject</button></span>
+        </div>`
+
+        const updates = {};
+        updates['/students/' + userUid + '/complaint/'] = newComplain;
+
+        swal("Forwaeded!", "Your complaint is forwarded!")
+        .then((value) => {
+          document.querySelector(".messComplainRaise").value = "";
+          document.querySelector(".messComplainDescription").value = "";
+          document.querySelector(".messComplaintdoneBy").value = "";
+        });
+
+        return update(ref(db), updates);
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
+})
+
+
+
+// 
+let hostelComplainSubmit = document.querySelector(".hostelComplainSubmit");
+hostelComplainSubmit.addEventListener("click", function () {
+  let hostelRaiseComplaint = document.querySelector(".hostelRaiseComplaint").value;
+  let hostelDescriptionComplain = document.querySelector(".hostelDescriptionComplain").value;
+  let hostelComplaintDoneby = document.querySelector(".hostelComplaintDoneby").value;
+
+  if (hostelRaiseComplaint != "" && hostelDescriptionComplain != "" && hostelComplaintDoneby != "") {
+    const db = getDatabase();
+
+    const userUid = `${localStorage.getItem("logged_in_user")}`;
+
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `students/${localStorage.getItem("logged_in_user")}`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+
+        const oldComplain = snapshot.val().complaint;
+        const newComplain = `${oldComplain} <div class="complain_body">
+        <h4>${snapshot.val().firstName} ${snapshot.val().lastName}</h4>
+        <h5>${hostelRaiseComplaint}</h5>
+        <p>${hostelDescriptionComplain}</p>
+        <span><button class="query" style="background-color:blue;">solve</button><button class="query" style="background-color: red;">reject</button></span>
+        </div>`
+
+        const updates = {};
+        updates['/students/' + userUid + '/complaint/'] = newComplain;
+
+        swal("Forwaeded!", "Your complaint is forwarded!")
+        .then((value) => {
+          document.querySelector(".messComplainRaise").value = "";
+          document.querySelector(".messComplainDescription").value = "";
+          document.querySelector(".messComplaintdoneBy").value = "";
+        });
+
+        return update(ref(db), updates);
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
+})
+
+
+// 
+let otherComplainSubmitBtn = document.querySelector(".otherComplainSubmitBtn");
+otherComplainSubmitBtn.addEventListener("click", function () {
+  let otherComplaintRaise = document.querySelector(".otherComplaintRaise").value;
+  let otherComplainDescription = document.querySelector(".otherComplainDescription").value;
+  let otherComplainDoneby = document.querySelector(".otherComplainDoneby").value;
+
+  if (otherComplaintRaise != "" && otherComplainDescription != "" && otherComplainDoneby != "") {
+    const db = getDatabase();
+
+    const userUid = `${localStorage.getItem("logged_in_user")}`;
+
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `students/${localStorage.getItem("logged_in_user")}`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+
+        const oldComplain = snapshot.val().complaint;
+        const newComplain = `${oldComplain} <div class="complain_body">
+        <h4>${snapshot.val().firstName} ${snapshot.val().lastName}</h4>
+        <h5>${otherComplaintRaise}</h5>
+        <p>${otherComplainDescription}</p>
+        <span><button class="query" style="background-color:blue;">solve</button><button class="query" style="background-color: red;">reject</button></span>
+        </div>`
+
+        const updates = {};
+        updates['/students/' + userUid + '/complaint/'] = newComplain;
+
+        swal("Forwaeded!", "Your complaint is forwarded!")
+        .then((value) => {
+          document.querySelector(".messComplainRaise").value = "";
+          document.querySelector(".messComplainDescription").value = "";
+          document.querySelector(".messComplaintdoneBy").value = "";
+        });
+
+        return update(ref(db), updates);
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
 })

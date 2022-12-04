@@ -759,7 +759,7 @@ function adminLogin(email, password) {
                 swal("Great!", "Your are successfully login as a Admin!", "success")
                     .then((value) => {
                         preloader2.style.display = "none";
-                        document.location.href = "try.html"
+                        document.location.href = "admindashboard.html"
                     });
             }, 2000);
             // ...

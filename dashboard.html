@@ -11,6 +11,25 @@
     <!-- cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assest/favicon//apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assest/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assest/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assest/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assest/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assest/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assest/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assest/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assest/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assest/favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assest/favicon//favicon-16x16.png">
+    <link rel="manifest" href="assest/favicon//manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
 </head>
 
 <style>
@@ -33,7 +52,7 @@
         display: none;
     }
 
-    .preloader3{
+    .preloader3 {
         display: none;
     }
 
@@ -140,31 +159,32 @@
         display: none;
     }
 
-    .update:hover{
+    .update:hover {
         cursor: pointer;
     }
 
     @media (max-width: 780px) {
-        #fullName{
+        #fullName {
             width: auto !important;
         }
 
-        #branch{
+        #branch {
             width: auto !important;
         }
 
-        .profile .profile-info{
+        .profile .profile-info {
             max-width: 100%;
         }
     }
 </style>
 
 <body onload="preloader()">
+
     <section class="dashboard-main">
         <!-- Side menu start -->
         <div class="aside">
             <div class="logo">
-                <a href="#"><span>Dash</span>Board</a>
+                <a href="#"><span>C</span>astly</a>
             </div>
             <div class="nav-toggle">
                 <span></span>
@@ -174,7 +194,10 @@
                 <li><a href="service.html"><i class="fa fa-list"></i> Services</a></li>
                 <li><a href="complain.html"><i class="fa fa-user"></i>Complaint</li>
                 <li><a href="contact.html"><i class="fa fa-comments"></i> Contact</a></li>
-                <li> <a href=""><button>logout</button></a></li>
+                <li> <a href="index.html" style="position: absolute; bottom: 35px; font-size: 18px;"><i
+                            class="fa-solid fa-right-from-bracket"></i><button
+                            style="display: inline; border: none; outline: none; font-size: 16px; font-weight: 600;">logout</button></a>
+                </li>
             </ul>
         </div>
 
@@ -258,7 +281,7 @@
                             <h4>Student No.</h4>
                             <input
                                 style="text-align: center; font-weight:100; font-size: 20px; color: #302e4d; border: none; outline: none; width: 50%; background: none;"
-                                id="contactNo"  />
+                                id="contactNo" />
                         </div>
                         <div class="contact-info-item padd-15">
                             <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
@@ -338,6 +361,14 @@
             let preloader1 = document.querySelector(".preloader1");
             preloader1.style.display = "none";
         }, 5000);
+
+        swal({
+            title: "Important Notice",
+            text: `Student hostel fee portal opens.
+Tommorrow will be under 19 trial at back of IT department.
+`,
+            icon: "warning",
+        });
     }
 </script>
 

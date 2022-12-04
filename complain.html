@@ -13,6 +13,25 @@
     <link rel="stylesheet" href="assest/CSS/service.css">
     <link rel="stylesheet" type="text/css" href="assest/CSS/complain.css">
     <link rel="stylesheet" href="assest/CSS/dashboard.css">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assest/favicon//apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assest/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assest/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assest/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assest/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assest/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assest/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assest/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assest/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assest/favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assest/favicon//favicon-16x16.png">
+    <link rel="manifest" href="assest/favicon//manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -29,6 +48,10 @@
             <li id="ragging"><a href="#"><i class="fa fa-house"></i> Ragging</a></li>
             <li id="other"><a href="#"><i class="fa fa-briefcase"></i> Other</a></li>
             <li><a href="service.html"><i class="fa fa-comments"></i> Back</a></li>
+            <li> <a href="index.html" style="position: absolute; bottom: 35px; font-size: 18px;"><i
+                        class="fa-solid fa-right-from-bracket"></i><button
+                        style="display: inline; border: none; outline: none; font-size: 16px; font-weight: 600;">logout</button></a>
+            </li>
         </ul>
     </div>
     <div class="section container">
@@ -41,91 +64,110 @@
         </div>
     </div>
     <!-- Input form for users to fill complaints and description -->
-    <div class="question-container" id="add-question-card">
-        <h2>Raise your Complaints</h2>
-        <div class="wrapper">
-            <!-- Error message -->
-            <div class="error-con">
-                <span class="hide" id="error">Input fields cannot be empty!</span>
+    <form action="https://formspree.io/f/moqbolyr" method="POST">
+        <div class="question-container" id="add-question-card">
+            <h2>Raise your Complaints</h2>
+            <div class="wrapper">
+                <!-- Error message -->
+                <div class="error-con">
+                    <span class="hide" id="error">Input fields cannot be empty!</span>
+                </div>
+                <!-- Close Button -->
+                <i class="fa-solid fa-xmark" id="close-btn-mess" style="display: grid;"></i>
             </div>
-            <!-- Close Button -->
-            <i class="fa-solid fa-xmark" id="close-btn-mess" style="display: grid;"></i>
-        </div>
-        <label for="question">Raise your Complaints</label>
-        <textarea class="input messComplainRaise" id="question" placeholder="Type the complaints here..." rows="2"></textarea>
-        <label for="answer">Description:</label>
-        <textarea class="input messComplainDescription" id="answer" rows="4" placeholder="Elaborate your issue here..."></textarea>
+            <label for="question">Raise your Complaints</label>
+            <textarea class="input messComplainRaise" id="question" placeholder="Type the complaints here..." rows="2"
+                name="Complaints Subject"></textarea>
+            <label for="answer">Description:</label>
+            <textarea class="input messComplainDescription" id="answer" rows="4"
+                placeholder="Elaborate your issue here..." name="Description"></textarea>
 
-        <label for="answer" required>Complaint done by:</label>
-        <textarea class="input messComplaintdoneBy" id="answer" rows="2" placeholder="Drop your Name and enrollment no...."></textarea>
-        <button id="save-btn" class="messComplainBtn">Save</button>
-    </div>
+            <label for="answer" required>Complaint done by:</label>
+            <textarea class="input messComplaintdoneBy" id="answer" rows="2"
+                placeholder="Drop your Name and enrollment no...." name="Name"></textarea>
+            <button id="save-btn" type="submit" class="messComplainBtn">Save</button>
+        </div>
+    </form>
     <!-- Side menu end -->
 
-
-    <div class="question-container ragging hide" id="add-ragging-complain">
-        <h2>Raise your Complaints</h2>
-        <div class="wrapper">
-            <!-- Error message -->
-            <div class="error-con">
-                <span class="hide" id="error">Input fields cannot be empty!</span>
+    <form action="https://formspree.io/f/moqbolyr" method="POST">
+        <div class="question-container ragging hide" id="add-ragging-complain">
+            <h2>Raise your Complaints</h2>
+            <div class="wrapper">
+                <!-- Error message -->
+                <div class="error-con">
+                    <span class="hide" id="error">Input fields cannot be empty!</span>
+                </div>
+                <!-- Close Button -->
+                <i class="fa-solid fa-xmark" id="close-btn-ragging" style="display: grid;"></i>
             </div>
-            <!-- Close Button -->
-            <i class="fa-solid fa-xmark" id="close-btn-ragging" style="display: grid;"></i>
+            <label for="question">Raise your Ragging Complaints</label>
+            <textarea name="Complaints Subject" class="input raggingComplaintRaise" id="question" placeholder="Type the complaints here..."
+                rows="2"></textarea>
+            <label for="answer">Description:</label>
+            <textarea class="input raggingComplaintDescription" id="answer" rows="4"
+                placeholder="Elaborate your issue here..." name="Description"></textarea>
+
+            <label for="answer" required>Complaint done by:</label>
+            <textarea class="input raggingComplainDoneBy" id="answer" rows="2"
+                placeholder="Drop your Name and enrollment no...." name="Name"></textarea>
+            <button class="raggingSubmitBtn" id="save-btn">Save</button>
         </div>
-        <label for="question">Raise your Ragging Complaints</label>
-        <textarea class="input" id="question" placeholder="Type the complaints here..." rows="2"></textarea>
-        <label for="answer">Description:</label>
-        <textarea class="input" id="answer" rows="4" placeholder="Elaborate your issue here..."></textarea>
+    </form>
 
-        <label for="answer" required>Complaint done by:</label>
-        <textarea class="input" id="answer" rows="2" placeholder="Drop your Name and enrollment no...."></textarea>
-        <button id="save-btn">Save</button>
-    </div>
-
-
-    <div class="question-container hostel hide" id="add-hostel-complain">
-        <h2>Raise your Complaints</h2>
-        <div class="wrapper">
-            <!-- Error message -->
-            <div class="error-con">
-                <span class="hide" id="error">Input fields cannot be empty!</span>
+    <form action="https://formspree.io/f/moqbolyr" method="POST">
+        <div class="question-container hostel hide" id="add-hostel-complain">
+            <h2>Raise your Complaints</h2>
+            <div class="wrapper">
+                <!-- Error message -->
+                <div class="error-con">
+                    <span class="hide" id="error">Input fields cannot be empty!</span>
+                </div>
+                <!-- Close Button -->
+                <i class="fa-solid fa-xmark" id="close-btn-hostel" style="display: grid;"></i>
             </div>
-            <!-- Close Button -->
-            <i class="fa-solid fa-xmark" id="close-btn-hostel" style="display: grid;"></i>
+            <label for="question">Raise your Hostel Complaints</label>
+            <textarea class="input hostelRaiseComplaint" id="question" placeholder="Type the complaints here..." name="Complaint Subject"
+                rows="2"></textarea>
+            <label for="answer">Description:</label>
+            <textarea class="input hostelDescriptionComplain" id="answer" rows="4"
+                placeholder="Elaborate your issue here..." name="Description"></textarea>
+
+            <label for="answer" required>Complaint done by:</label>
+            <textarea class="input hostelComplaintDoneby" id="answer" rows="2"
+                placeholder="Drop your Name and enrollment no...." name="Name"></textarea>
+            <button class="hostelComplainSubmit" id="save-btn">Save</button>
         </div>
-        <label for="question">Raise your Hostel Complaints</label>
-        <textarea class="input" id="question" placeholder="Type the complaints here..." rows="2"></textarea>
-        <label for="answer">Description:</label>
-        <textarea class="input" id="answer" rows="4" placeholder="Elaborate your issue here..."></textarea>
+    </form>
 
-        <label for="answer" required>Complaint done by:</label>
-        <textarea class="input" id="answer" rows="2" placeholder="Drop your Name and enrollment no...."></textarea>
-        <button id="save-btn">Save</button>
-    </div>
-
-    <div class="question-container other hide" id="add-other-complain">
-        <h2>Raise your Complaints</h2>
-        <div class="wrapper">
-            <!-- Error message -->
-            <div class="error-con">
-                <span class="hide" id="error">Input fields cannot be empty!</span>
+    <form action="https://formspree.io/f/moqbolyr" method="POST">
+        <div class="question-container other hide" id="add-other-complain">
+            <h2>Raise your Complaints</h2>
+            <div class="wrapper">
+                <!-- Error message -->
+                <div class="error-con">
+                    <span class="hide" id="error">Input fields cannot be empty!</span>
+                </div>
+                <!-- Close Button -->
+                <i class="fa-solid fa-xmark" id="close-btn-other" style="display: grid;"></i>
             </div>
-            <!-- Close Button -->
-            <i class="fa-solid fa-xmark" id="close-btn-other" style="display: grid;"></i>
-        </div>
-        <label for="question">Raise your Other Complaints</label>
-        <textarea class="input" id="question" placeholder="Type the complaints here..." rows="2"></textarea>
-        <label for="answer">Description:</label>
-        <textarea class="input" id="answer" rows="4" placeholder="Elaborate your issue here..."></textarea>
+            <label for="question">Raise your Other Complaints</label>
+            <textarea name="Complaint Subject" class="input otherComplaintRaise" id="question" placeholder="Type the complaints here..."
+                rows="2"></textarea>
+            <label for="answer">Description:</label>
+            <textarea class="input otherComplainDescription" id="answer" rows="4"
+                placeholder="Elaborate your issue here..." name="Description"></textarea>
 
-        <label for="answer" required>Complaint done by:</label>
-        <textarea class="input" id="answer" rows="2" placeholder="Drop your Name and enrollment no...."></textarea>
-        <button id="save-btn">Save</button>
-    </div>
+            <label for="answer" required>Complaint done by:</label>
+            <textarea class="input otherComplainDoneby" id="answer" rows="2"
+                placeholder="Drop your Name and enrollment no...." name="Name"></textarea>
+            <button class="otherComplainSubmitBtn" id="save-btn">Save</button>
+        </div>
+    </form>
 
     <!-- Script -->
     <script src="/javascipt/complain.js" type="module"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

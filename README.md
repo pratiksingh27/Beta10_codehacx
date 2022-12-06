@@ -74,4 +74,4 @@ Yes , your data will be shared on legal authorities only , no need to worry .
 
 ## Banner
 
-![App Screenshot]https://github.com/pratiksingh27/Beta10_codehacx/blob/main/CASTLY.png
+![App Screenshot](https://github.com/pratiksingh27/Beta10_codehacx/blob/main/CASTLY.png)
